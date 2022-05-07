@@ -55,13 +55,13 @@ async function run() {
             res.send(result);
         });
 
-        //hellow world
+        //Order Collection API
         app.get('/order', async (req, res) => {
             const email = req.query.email;
+            console.log("Check Email..",email)
             const query = {email: email};
-            const cursor = serviceCollection.find(query);
+            const cursor = orderCollection.find(query);
             const orders = await  cursor.toArray()
-            console.log(orders)
             res.send(orders)
         })
 
