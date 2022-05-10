@@ -54,7 +54,7 @@ async function run() {
             const service = await cursor.toArray()
             res.send(service)
         })
-
+        //get single id api
         app.get('/service/:id', async (req, res) => {
             const id = req.params.id;
             console.log(id);
@@ -94,7 +94,7 @@ async function run() {
                 res.status(403).send({message: 'forbidden access'})
             }
         })
-
+            // order api
         app.post('/order', async (req, res) => {
             const order = req.body;
             const result = await orderCollection.insertOne(order);
