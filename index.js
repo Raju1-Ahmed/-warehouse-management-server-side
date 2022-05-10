@@ -119,6 +119,11 @@ app.get('/', (req, res) => {
 
 })
 
+app.get('/hero', (req, res) => {
+    res.send('Deploy to herokuu...')
+
+})
+
 app.listen(port, () => {
     console.log('Json is running on port', port);
 })
